@@ -1,0 +1,14 @@
+<%- include layout.ejs %>
+
+    <% posts.forEach(function(post){ %>
+      <div class="post">
+      <h1><%=post.title %></h1>
+      <p class="meta">posted in <a href="/categories/show/<%=post.category%>"><%=post.category %> By <%=post.author %> on <%= moment(post.date).fromNow() %></a></p>
+      <img src="/images/uploads/<%= post.image %>">
+      <a class="more" href="/posts/show/<%= post._id %>">Read More</a>
+    <% }); %>
+      </div>
+  </div>
+
+  </body>
+</html>
